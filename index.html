@@ -1,0 +1,159 @@
+<idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	</head>
+<body>
+
+<img src="./img/logo.png" class="logo" >
+
+<header id="header">
+	<div id="menu">
+		<ul>
+			<li id="menuA"></li>
+			<li id="menuB"></li>
+			<li id="menuC"></li>
+			<li id="menuD"></li>
+	
+		</ul>
+	</div>
+</header>
+
+
+<article>
+
+<div class="tv" id="tv"></div>
+<div class="section" id="sectionA">
+	<video autoplay id="video1"  ><source src="./img/video.mp4" type="video/mp4">
+	</video>
+</div>
+
+<div class="section" id="sectionB">
+	<video  id="video3" ><source src="./img/video3.mp4" type="video/mp4">
+	</video>
+</div>
+
+<div class="section" id="sectionC">
+	<video  id="video2" ><source src="./img/video2.mp4" type="video/mp4">
+</div>
+
+<div class="section" id="sectionD">
+	<video  id="video4" ><source src="./img/video4.mp4" type="video/mp4">
+</div>
+
+</article>
+
+
+
+<script>
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var myScroll = document.body.scrollTop;
+
+
+		if( myScroll<201){
+			video1.play();
+			menuA.style.background = "#8f181a";
+		} else {video1.pause();
+			menuA.style.background = "#f1eee5";
+			menuA.style.border = "1px solid #8f181a";
+	}			
+		
+
+		if( 699>myScroll&&myScroll > 200  ){
+			video3.play();
+			menuB.style.background = "#8f181a";
+		} else {video3.pause();
+			menuB.style.background = "#f1eee5";
+			menuB.style.border = "1px solid #8f181a";
+	}			
+		
+
+
+		if( 1199>myScroll&&myScroll > 700 ){
+			video2.play();
+			menuC.style.background = "#8f181a";
+		} else {video2.pause();
+				menuC.style.background = "#f1eee5";
+				menuC.style.border = "1px solid #8f181a";
+	}
+
+	if( 1599>myScroll&&myScroll > 1200 ){
+			video4.play();
+			menuD.style.background = "#8f181a";
+		} else {video4.pause();
+			menuD.style.background = "#f1eee5";
+			menuD.style.border = "1px solid #8f181a";
+	}				
+		
+}
+	
+</script>
+
+
+<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.tv{width:100%; 
+			height: 100%;
+			position: fixed; 
+			top: 0; 
+			left: 0; }
+
+		.section{height:495px;
+				width:1000px; 
+				position: relative; 
+				margin:0 auto; }
+
+		.logo {position: fixed; 
+			   top: 75; 
+			   left:7%; 
+			   z-index: 999;}
+
+		header{height:110px; 
+			width:100%; 
+			transition: all 0.3s; 
+			z-index: 999; 
+			padding: 0;
+			position:fixed; 
+			top: 0; 
+			left: 0;}
+
+		header  #menu{width:270px;
+					 height:15px; 
+					 margin:0 auto;
+					 position: relative;
+					 z-index: 999; 
+					 padding-left: 0;
+					 margin-top: 70px;}
+
+		header li{width:12px;
+				  height:12px;
+				  color:black;
+				  background: #8f181a;
+				  float:left;
+				  border-radius: 50px;
+				  text-align: left;
+				  line-height: 110px;
+				  color:black;
+				  font-size: 3em;
+				  margin-left: 12px;
+				  margin-right:12px;
+				  list-style: none; 
+				  position: relative;
+				   }
+
+		article{margin-bottom: 150px; margin-top: 120px; }
+		#video1{width:880px; height: 495px; margin-left: 10px;}
+		#video2{width:880px; height: 495px; margin-left: 10px;}
+		#video3{width:880px; height: 495px; margin-left: 40px;}
+		#video4{width:880px; height: 495px; margin-left: 40px;}
+		
+
+		#tv{background: url('./img/tv.png'); background-size: 100%;  z-index: 888;}
+		#sectionA{ background: red;transition: all 1s; }
+		#sectionB{ background: yellow; transition: all 1s; }
+		#sectionC{ background: red; background-position: 0px -120px; }
+		#sectionD{ background: green; transition: all 1s; }
+		#sectionE{ background: black; transition: all 1s; }
+</style>
+
